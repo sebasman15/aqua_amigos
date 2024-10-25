@@ -4,3 +4,9 @@
 
 layout: home
 ---
+
+## Welcome to Aqua Amigos
+
+[![Aqua Amigos Logo](/assets/images/aqua_amigos_logo.png)](https://aqua-amigos.com)
+
+Click on the image above to visit our website!

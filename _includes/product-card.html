@@ -1,0 +1,41 @@
+<div class="product-container">
+    <div class="product-image">
+      {% if include.image %}
+        <img src="{{ include.image }}" alt="{{ include.title | default: 'Product Image' }}" />
+      {% else %}
+        <img src="/api/placeholder/400/400" alt="Product Image" />
+      {% endif %}
+    </div>
+    <div class="product-info">
+      <div class="rating">
+        {% for i in (1..5) %}
+          <span class="star">
+            {% if i <= include.rating %}
+              <img src="/assets/star-filled.png" alt="Filled star" />
+            {% else %}
+              <img src="/assets/star-empty.png" alt="Empty star" />
+            {% endif %}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="price">
+        {% if include.price %}
+          <span>€{{ include.price }}</span>
+        {% else %}
+          <span class="placeholder">Prijs niet beschikbaar</span>
+        {% endif %}
+      </div>
+      <div class="volume">
+        {% if include.volume %}
+          <span>{{ include.volume }}</span>
+        {% else %}
+          <span class="placeholder">Volume niet beschikbaar</span>
+        {% endif %}
+      </div>
+      {% for text_block in include.text_blocks %}
+        <div class="info-block">
+          <span>{{ text_block }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
